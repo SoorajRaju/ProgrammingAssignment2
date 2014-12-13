@@ -1,5 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
+# Put comments here that give an overall description of what your
+# functions do
 # makeCacheMatrix creates a list containing a function to
 # a. Set the value of matrix
 # b. Get the value of matrix
