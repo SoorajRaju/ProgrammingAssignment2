@@ -1,0 +1,16 @@
+{
+    "contents" : "# Put comments here that give an overall description of what your\n# functions do\n# makeCacheMatrix creates a list containing a function to\n# a. Set the value of matrix\n# b. Get the value of matrix\n# c. Set the value of inverse of matrix\n# d. Get the value of inverse of matrix\nmakeCacheMatrix <- function(Matrix_1 = matrix()) {\n  inverse <- NULL\n  set <- function(m1) {\n    Matrix_1 <<- m1;\n    inverse <<- NULL;\n  }\n  get <- function() return(Matrix_1);\n  setinv <- function(inv) inverse <<- inv;\n  getinv <- function() return(inverse);\n  return(list(set = set, get = get, setinv = setinv, getinv = getinv))\n}\n\n\n# The following function returns the inverse of the matrix. It first checks if\n# the inverse has already been computed. If so, it gets the result and skips the\n# computation. If not, it computes the inverse, sets the value in the cache via\n# setinverse function.\n\ncacheSolve <- function(Matrix_1, ...) {\n  inverse <- Matrix_1$getinv()\n  if(!is.null(inverse)) {\n    message(\"Getting cached data...\")\n    return(inverse)\n  }\n  data <- Matrix_1$get()\n  invserse <- solve(data, ...)\n  Matrix_1$setinv(inverse)\n  return(inverse)\n}    ## Return a matrix that is the inverse of 'x'\n\n",
+    "created" : 1422068173838.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1539148738",
+    "id" : "62BB1475",
+    "lastKnownWriteTime" : 1422068594,
+    "path" : "D:/Data_Science/02_RProg/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
